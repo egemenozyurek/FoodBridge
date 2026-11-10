@@ -238,6 +238,11 @@ public class MainMenuGUI extends javax.swing.JFrame {
         new FoodBankGUI().setVisible(true);
     }//GEN-LAST:event_foodBankBtnActionPerformed
 
+    private void foodRescueBtnActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+        new FoodRescueGUI().setVisible(true);
+    } 
+
     /**
      * @param args the command line arguments
      */
