@@ -4,6 +4,8 @@
  */
 package foodinventory;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author egeme
@@ -17,6 +19,7 @@ public class FoodBankGUI extends javax.swing.JFrame {
      */
     public FoodBankGUI() {
         initComponents();
+        getRootPane().setDefaultButton(addBtn);
     }
 
     /**
@@ -28,21 +31,233 @@ public class FoodBankGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        headerPanel = new javax.swing.JPanel();
+        titleLabel = new javax.swing.JLabel();
+        subtitleLabel = new javax.swing.JLabel();
+        mainPanel = new javax.swing.JPanel();
+        leftPanel = new javax.swing.JPanel();
+        formPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        idField = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        nameField = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        categoryCombo = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        quantityField = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        expiryField = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        storageCombo = new javax.swing.JComboBox<>();
+        buttonPanel = new javax.swing.JPanel();
+        addBtn = new javax.swing.JButton();
+        displayBtn = new javax.swing.JButton();
+        deleteBtn = new javax.swing.JButton();
+        lowStockBtn = new javax.swing.JButton();
+        clearBtn = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
+        rightPanel = new javax.swing.JPanel();
+        searchPanel = new javax.swing.JPanel();
+        searchField = new javax.swing.JTextField();
+        searchBtn = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        outputArea = new javax.swing.JTextArea();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
+
+        headerPanel.setBackground(new java.awt.Color(21, 101, 192));
+        headerPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(12, 18, 12, 18));
+        headerPanel.setLayout(new java.awt.GridLayout(2, 1));
+
+        titleLabel.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
+        titleLabel.setForeground(new java.awt.Color(255, 255, 255));
+        titleLabel.setText("Food Bank Inventory");
+        headerPanel.add(titleLabel);
+
+        subtitleLabel.setForeground(new java.awt.Color(255, 255, 255));
+        subtitleLabel.setText("Section 2: Manage the stock in fridges, freezers and dry storage");
+        headerPanel.add(subtitleLabel);
+
+        getContentPane().add(headerPanel, java.awt.BorderLayout.PAGE_START);
+
+        mainPanel.setBackground(new java.awt.Color(238, 238, 238));
+        mainPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(16, 18, 18, 18));
+        mainPanel.setPreferredSize(new java.awt.Dimension(860, 440));
+        mainPanel.setLayout(new java.awt.BorderLayout(16, 0));
+
+        leftPanel.setOpaque(false);
+        leftPanel.setPreferredSize(new java.awt.Dimension(330, 400));
+        leftPanel.setLayout(new java.awt.BorderLayout(0, 12));
+
+        formPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Stock Item"));
+        formPanel.setOpaque(false);
+        formPanel.setLayout(new java.awt.GridLayout(6, 2, 0, 8));
+
+        jLabel1.setText("Stock ID: ");
+        formPanel.add(jLabel1);
+        formPanel.add(idField);
+
+        jLabel2.setText("Name: ");
+        formPanel.add(jLabel2);
+        formPanel.add(nameField);
+
+        jLabel3.setText("Category: ");
+        formPanel.add(jLabel3);
+
+        categoryCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dairy", "Meat", "Vegetables", "Bakery", "Tinned", "Dry goods" }));
+        formPanel.add(categoryCombo);
+
+        jLabel4.setText("Quantity: ");
+        formPanel.add(jLabel4);
+        formPanel.add(quantityField);
+
+        jLabel5.setText("Expiry (yyyy-MM-dd): ");
+        formPanel.add(jLabel5);
+        formPanel.add(expiryField);
+
+        jLabel6.setText("Storage type:");
+        formPanel.add(jLabel6);
+
+        storageCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chilled", "Frozen", "Ambient" }));
+        formPanel.add(storageCombo);
+
+        leftPanel.add(formPanel, java.awt.BorderLayout.PAGE_START);
+
+        buttonPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 0, 30, 0));
+        buttonPanel.setOpaque(false);
+        buttonPanel.setLayout(new java.awt.GridLayout(3, 2, 8, 8));
+
+        addBtn.setBackground(new java.awt.Color(21, 101, 192));
+        addBtn.setForeground(new java.awt.Color(255, 255, 255));
+        addBtn.setText("Add");
+        addBtn.setBorderPainted(false);
+        addBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addBtn.setFocusPainted(false);
+        addBtn.setFocusable(false);
+        buttonPanel.add(addBtn);
+
+        displayBtn.setBackground(new java.awt.Color(255, 255, 255));
+        displayBtn.setForeground(new java.awt.Color(21, 101, 192));
+        displayBtn.setText("Display All");
+        displayBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(21, 101, 192), 1, true));
+        displayBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        displayBtn.setFocusPainted(false);
+        displayBtn.setFocusable(false);
+        buttonPanel.add(displayBtn);
+
+        deleteBtn.setBackground(new java.awt.Color(255, 255, 255));
+        deleteBtn.setForeground(new java.awt.Color(21, 101, 192));
+        deleteBtn.setText("Delete By ID");
+        deleteBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(21, 101, 192), 1, true));
+        deleteBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        deleteBtn.setFocusPainted(false);
+        deleteBtn.setFocusable(false);
+        buttonPanel.add(deleteBtn);
+
+        lowStockBtn.setBackground(new java.awt.Color(230, 81, 0));
+        lowStockBtn.setForeground(new java.awt.Color(255, 255, 255));
+        lowStockBtn.setText("Low Stock");
+        lowStockBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lowStockBtn.setFocusPainted(false);
+        lowStockBtn.setFocusable(false);
+        buttonPanel.add(lowStockBtn);
+
+        clearBtn.setBackground(new java.awt.Color(255, 255, 255));
+        clearBtn.setForeground(new java.awt.Color(21, 101, 192));
+        clearBtn.setText("Clear Form");
+        clearBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(21, 101, 192), 1, true));
+        clearBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        clearBtn.setFocusPainted(false);
+        clearBtn.setFocusable(false);
+        buttonPanel.add(clearBtn);
+
+        backBtn.setBackground(new java.awt.Color(85, 85, 85));
+        backBtn.setForeground(new java.awt.Color(255, 255, 255));
+        backBtn.setText("Back to Menu");
+        backBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(85, 85, 85), 1, true));
+        backBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backBtn.setFocusPainted(false);
+        backBtn.setFocusable(false);
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+        buttonPanel.add(backBtn);
+
+        leftPanel.add(buttonPanel, java.awt.BorderLayout.CENTER);
+
+        mainPanel.add(leftPanel, java.awt.BorderLayout.LINE_START);
+
+        rightPanel.setOpaque(false);
+        rightPanel.setLayout(new java.awt.BorderLayout(0, 8));
+
+        searchPanel.setOpaque(false);
+        searchPanel.setLayout(new java.awt.BorderLayout(8, 0));
+
+        searchField.setToolTipText("Type a product name");
+        searchField.setPreferredSize(new java.awt.Dimension(0, 28));
+        searchPanel.add(searchField, java.awt.BorderLayout.CENTER);
+
+        searchBtn.setBackground(new java.awt.Color(255, 255, 255));
+        searchBtn.setForeground(new java.awt.Color(21, 101, 192));
+        searchBtn.setText("Search");
+        searchBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(21, 101, 192), 1, true));
+        searchBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        searchBtn.setFocusPainted(false);
+        searchBtn.setFocusable(false);
+        searchBtn.setPreferredSize(new java.awt.Dimension(90, 28));
+        searchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBtnActionPerformed(evt);
+            }
+        });
+        searchPanel.add(searchBtn, java.awt.BorderLayout.LINE_END);
+
+        rightPanel.add(searchPanel, java.awt.BorderLayout.PAGE_START);
+
+        outputArea.setEditable(false);
+        outputArea.setColumns(20);
+        outputArea.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        outputArea.setRows(5);
+        outputArea.setText("Press \"Display all\" to see the stock");
+        outputArea.setBorder(javax.swing.BorderFactory.createTitledBorder("Results"));
+        outputArea.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        outputArea.setFocusable(false);
+        outputArea.setMargin(new java.awt.Insets(6, 8, 6, 8));
+        outputArea.setOpaque(false);
+        jScrollPane1.setViewportView(outputArea);
+
+        rightPanel.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        mainPanel.add(rightPanel, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // TODO add your handling code here:
+        boolean formHasText = !idField.getText().isEmpty() || !nameField.getText().isEmpty()
+            || !quantityField.getText().isEmpty() || !expiryField.getText().isEmpty();
+        
+        if (formHasText) {
+        int answer = JOptionPane.showConfirmDialog(this,
+                "The form has unsaved input. Go back to the menu?",
+                "Leave Food Bank", javax.swing.JOptionPane.YES_NO_OPTION);
+        if (answer != JOptionPane.YES_OPTION) {
+            return;   // stay on this screen
+        }
+    }
+        dispose();
+    }//GEN-LAST:event_backBtnActionPerformed
+
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+        // TODO add your handling code here:
+        searchBtn.doClick();
+    }//GEN-LAST:event_searchBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +285,36 @@ public class FoodBankGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addBtn;
+    private javax.swing.JButton backBtn;
+    private javax.swing.JPanel buttonPanel;
+    private javax.swing.JComboBox<String> categoryCombo;
+    private javax.swing.JButton clearBtn;
+    private javax.swing.JButton deleteBtn;
+    private javax.swing.JButton displayBtn;
+    private javax.swing.JTextField expiryField;
+    private javax.swing.JPanel formPanel;
+    private javax.swing.JPanel headerPanel;
+    private javax.swing.JTextField idField;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel leftPanel;
+    private javax.swing.JButton lowStockBtn;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JTextField nameField;
+    private javax.swing.JTextArea outputArea;
+    private javax.swing.JTextField quantityField;
+    private javax.swing.JPanel rightPanel;
+    private javax.swing.JButton searchBtn;
+    private javax.swing.JTextField searchField;
+    private javax.swing.JPanel searchPanel;
+    private javax.swing.JComboBox<String> storageCombo;
+    private javax.swing.JLabel subtitleLabel;
+    private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 }
