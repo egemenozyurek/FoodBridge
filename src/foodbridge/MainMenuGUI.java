@@ -5,6 +5,7 @@
 package foodbridge;
 
 import foodinventory.FoodBankGUI;
+import foodrescue.FoodRescueGUI;
 
 
 /** Home screen of FoodBridge. Holds the three Manager objects so that data stays
@@ -110,6 +111,11 @@ public class MainMenuGUI extends javax.swing.JFrame {
         foodRescueBtn.setFocusPainted(false);
         foodRescueBtn.setMargin(new java.awt.Insets(0, 0, 0, 0));
         foodRescueBtn.setPreferredSize(new java.awt.Dimension(170, 36));
+        foodRescueBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                foodRescueBtnActionPerformed(evt);
+            }
+        });
         rescueBtnPanel.add(foodRescueBtn);
 
         rescueCard.add(rescueBtnPanel, java.awt.BorderLayout.PAGE_END);
@@ -238,10 +244,10 @@ public class MainMenuGUI extends javax.swing.JFrame {
         new FoodBankGUI().setVisible(true);
     }//GEN-LAST:event_foodBankBtnActionPerformed
 
-    private void foodRescueBtnActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    private void foodRescueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foodRescueBtnActionPerformed
         // TODO add your handling code here:
         new FoodRescueGUI().setVisible(true);
-    } 
+    }//GEN-LAST:event_foodRescueBtnActionPerformed
 
     /**
      * @param args the command line arguments
