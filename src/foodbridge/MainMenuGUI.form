@@ -431,6 +431,9 @@
                       <Dimension value="[170, 36]"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="distributionBtnActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

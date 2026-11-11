@@ -4,6 +4,7 @@
  */
 package foodbridge;
 
+import foodDistribution.foodDistributionGUI;
 import foodinventory.FoodBankGUI;
 import foodrescue.FoodRescueGUI;
 
@@ -199,6 +200,11 @@ public class MainMenuGUI extends javax.swing.JFrame {
         distributionBtn.setFocusPainted(false);
         distributionBtn.setMargin(new java.awt.Insets(0, 0, 0, 0));
         distributionBtn.setPreferredSize(new java.awt.Dimension(170, 36));
+        distributionBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                distributionBtnActionPerformed(evt);
+            }
+        });
         distributionBtnPanel.add(distributionBtn);
 
         distributionCard.add(distributionBtnPanel, java.awt.BorderLayout.PAGE_END);
@@ -248,6 +254,11 @@ public class MainMenuGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         new FoodRescueGUI().setVisible(true);
     }//GEN-LAST:event_foodRescueBtnActionPerformed
+
+    private void distributionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_distributionBtnActionPerformed
+        // TODO add your handling code here:
+        new foodDistributionGUI().setVisible(true);
+    }//GEN-LAST:event_distributionBtnActionPerformed
 
     /**
      * @param args the command line arguments
